@@ -4,495 +4,149 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Internship Galaxy · Portfolio</title>
-  <style>
-    /* ====== CSS ====== */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f7ff;
-      color: #4b0082;
-      scroll-behavior: smooth;
-    }
-
-    header {
-      text-align: center;
-      padding: 30px 10px;
-      background-color: #b6e8f8;
-    }
-
-    header h1 { font-size: 2.5rem; margin-bottom: 10px; }
-    header p { font-size: 1.2rem; margin-top: 0; }
-
-    nav a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #4b0082;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav a:hover { color: #d275f1; }
-
-    section { padding: 40px 20px; max-width: 800px; margin: 0 auto; opacity:0; transform:translateY(20px); transition: all 0.8s ease-out; }
-    section.visible { opacity:1; transform:translateY(0); }
-    section h2 { color: #000000; margin-bottom: 20px; }
-
-    /* ====== Projects ====== */
-    .projects-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
-      gap: 20px;
-    }
-
-    .project-card {
-      border: 2px solid #ede5ff;
-      border-radius: 10px;
-      padding: 10px;
-      text-align: center;
-      cursor: pointer;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-
-    .project-card img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    /* ====== Lightbox ====== */
-    .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.8);
-      justify-content: center;
-      align-items: center;
-    }
-
-    .lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 10px;
-      box-shadow: 0 0 20px white;
-    }
-
-    .close-lightbox {
-      position: absolute;
-      top: 20px; right: 30px;
-      font-size: 2rem;
-      color: white;
-      cursor: pointer;
-    }
-
-    /* ====== Pagination ====== */
-    .pagination {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .pagination button {
-      background-color: #ede5ff;
-      border: none;
-      padding: 8px 12px;
-      margin: 0 5px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .pagination button:hover { background-color: #d6caff; }
-
-    footer { text-align: center; padding: 20px; background-color: #ede5ff; }
-
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <h1>อุทยานการเรียนรู้เมืองนครศรีธรรมราช</h1>
-    <p>รวมผลงานฝึกงาน</p>
-<header style="
-  width: 100%;
-  background: white;
-  padding: 15px 0;
-  box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-">
+<!-- HERO -->
+<header class="hero" id="home">
+  <h1>อุทยานการเรียนรู้เมืองนครศรีธรรมราช</h1>
+  <p>รวมผลงานฝึกงาน</p>
+</header>
 
-  <nav style="
-    width: 90%;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-  ">
-    <a href="#home" style="
-      text-decoration: none;
-      color: #333;
-      font-weight: 600;
-      font-size: 18px;
-      transition: 0.3s;
-    ">หน้าแรก</a>
-
-    <a href="#about" style="
-      text-decoration: none;
-      color: #333;
-      font-weight: 600;
-      font-size: 18px;
-      transition: 0.3s;
-    ">เกี่ยวกับฉัน</a>
-
-    <a href="#projects" style="
-      text-decoration: none;
-      color: #333;
-      font-weight: 600;
-      font-size: 18px;
-      transition: 0.3s;
-    ">ผลงานฝึกงาน</a>
-
-    <a href="#skills" style="
-      text-decoration: none;
-      color: #333;
-      font-weight: 600;
-      font-size: 18px;
-      transition: 0.3s;
-    ">ทักษะ</a>
-
-    <a href="#timeline" style="
-      text-decoration: none;
-      color: #333;
-      font-weight: 600;
-      font-size: 18px;
-      transition: 0.3s;
-    ">ไทม์ไลน์</a>
-
-    <a href="#contact" style="
-      text-decoration: none;
-      color: #333;
-      font-weight: 600;
-      font-size: 18px;
-      transition: 0.3s;
-    ">ติดต่อ</a>
+<!-- NAVBAR -->
+<header class="navbar">
+  <nav>
+    <a href="#home">หน้าแรก</a>
+    <a href="#about">เกี่ยวกับฉัน</a>
+    <a href="#projects">ผลงานฝึกงาน</a>
+    <a href="#skills">ทักษะ</a>
+    <a href="#timeline">ไทม์ไลน์</a>
+    <a href="#contact">ติดต่อ</a>
   </nav>
 </header>
 
-
 <!-- ABOUT -->
-<section id="about" style="
-  display: flex;
-  justify-content: center;
-  padding: 40px 0;
-  background: #f5f5f5;
-">
-  <div class="about-card" style="
-    background: white;
-    padding: 30px;
-    width: 350px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-  ">
-    
-    <h2 style="
-      margin-bottom: 20px;
-      font-size: 26px;
-      color: #333;
-    ">เกี่ยวกับฉัน</h2>
+<section id="about">
+  <div class="about-card">
+    <h2>เกี่ยวกับฉัน</h2>
+    <img src="783.jpg" alt="รูปของฉัน">
+    <h3>นายจีระศักดิ์ รอดสวัสดิ์</h3>
+    <p>อายุ 17 | วิทยาลัยเทคนิคนครศรีธรรมราช</p>
+    <p>แผนก เทคโนโลยีสารสนเทศ</p>
+  </div>
+</section>
 
-    <img src="783.jpg" alt="รูปของฉัน" style="
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid #ddd;
-      margin-bottom: 20px;
-    ">
+<section id="projects">
+  <h2>ผลงานการฝึกงาน</h2>
 
-    <h3 style="margin: 8px 0; color: #444;">นายจีระศักดิ์ รอดสวัสดิ์</h3>
-    <h3 style="margin: 8px 0; color: #444;">อายุ 17 | เกิด 20 พฤษภาคม 2551</h3>
-    <h3 style="margin: 8px 0; color: #444;">กำลังศึกษา : วิทยาลัยเทคนิคนครศรีธรรมราช</h3>
-    <h3 style="margin: 8px 0; color: #444;">แผนก : เทคโนโลยีสารสนเทศ</h3>
+  <div class="folder-container">
+
+    <div class="folder-card" data-album="vr">
+      <div class="folder-icon">📁</div>
+      <h3>บริการเครื่องเล่นVr</h3>
+    </div>
+
+    <div class="folder-card" data-album="meeting">
+      <div class="folder-icon">📁</div>
+      <h3>งานจัดห้องประชุม</h3>
+    </div>
 
   </div>
 </section>
 
-
-  <!-- PROJECTS -->
-  <section id="projects">
-    <h2>แฟ้มผลงานฝึกงาน</h2>
-    <div class="projects-container" id="projects-container"></div>
-    <div class="pagination" id="pagination"></div>
-  </section>
+<!-- หน้ารูป -->
+<div class="album-modal" id="albumModal">
+  <span class="album-close" id="albumClose">&times;</span>
+  <div class="album-images" id="albumImages"></div>
+</div>
 
 <!-- SKILLS -->
-<section id="skills" style="
-  padding: 60px 0;
-  background: #b6e8f8;
-  text-align: center;
-">
-  <h2 style="
-    font-size: 28px;
-    margin-bottom: 30px;
-    color: #333;
-  ">
-    ทักษะที่ได้เรียนรู้
-  </h2>
-
-  <div style="
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    width: 90%;
-    margin: auto;
-  ">
-
-    <div style="
-      background: white;
-      padding: 20px 30px;
-      border-radius: 15px;
-      width: 250px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      font-size: 18px;
-      font-weight: 600;
-      color: #444;
-    ">
-      ⭐ การจัดการเวลา
-    </div>
-
-    <div style="
-      background: white;
-      padding: 20px 30px;
-      border-radius: 15px;
-      width: 250px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      font-size: 18px;
-      font-weight: 600;
-      color: #444;
-    ">
-      💡 การแก้ปัญหา
-    </div>
-
-    <div style="
-      background: white;
-      padding: 20px 30px;
-      border-radius: 15px;
-      width: 250px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      font-size: 18px;
-      font-weight: 600;
-      color: #444;
-    ">
-      🔄 การปรับตัว
-    </div>
-
-    <div style="
-      background: white;
-      padding: 20px 30px;
-      border-radius: 15px;
-      width: 250px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      font-size: 18px;
-      font-weight: 600;
-      color: #444;
-    ">
-      📘 การเรียนรู้ตลอดเวลา
-    </div>
-
-    <div style="
-      background: rgb(255, 255, 255);
-      padding: 20px 30px;
-      border-radius: 15px;
-      width: 250px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      font-size: 18px;
-      font-weight: 600;
-      color: #444;
-    ">
-      💻 การใช้อุปกรณ์เทคโนโลยีสารสนเทศ
-    </div>
-
+<section id="skills">
+  <h2>ทักษะที่ได้เรียนรู้</h2>
+  <div class="skills">
+    <div>⭐ การจัดการเวลา</div>
+    <div>💡 การแก้ปัญหา</div>
+    <div>🔄 การปรับตัว</div>
+    <div>📘 การเรียนรู้ตลอดเวลา</div>
+    <div>💻 การใช้อุปกรณ์ IT</div>
   </div>
 </section>
 
 <!-- TIMELINE -->
-<section id="timeline" style="display:flex; justify-content:center; padding:40px 20px; background:#f7f5ff;">
-  <div style="background:#fff; border:2px solid #6a4fff; border-radius:16px; padding:30px; max-width:600px; width:100%; box-shadow:0 8px 20px rgba(0,0,0,0.1);">
-    <h2 style="color:#4a2cff; text-align:center; margin-bottom:25px;">ไทม์ไลน์การฝึกงาน</h2>
+<section id="timeline" class="timeline-section">
+  <h2>ไทม์ไลน์การฝึกงาน</h2>
 
-    <div style="border-left:3px solid #6a4fff; padding-left:15px; margin-bottom:20px; position:relative;">
-      <span style="position:absolute; left:-8px; top:8px; width:12px; height:12px; background:#6a4fff; border-radius:50%; display:inline-block;"></span>
-      <h3 style="margin:0 0 5px 0; color:#6a4fff;">สัปดาห์ที่ 1</h3>
-      <p style="margin:0; color:#4a2cff;">สอนการใช้เครื่องเล่นVr และพาดูห้องต่างๆ</p>
+  <div class="timeline">
+    <div class="timeline-item">
+      <span class="dot"></span>
+      <div class="content">
+        <h3>สัปดาห์ที่ 1</h3>
+        <p>สอนการใช้งานเครื่องเล่น VR และแนะนำสถานที่</p>
+      </div>
     </div>
 
-    <div style="border-left:3px solid #6a4fff; padding-left:15px; margin-bottom:20px; position:relative;">
-      <span style="position:absolute; left:-8px; top:8px; width:12px; height:12px; background:#6a4fff; border-radius:50%; display:inline-block;"></span>
-      <h3 style="margin:0 0 5px 0; color:#6a4fff;">สัปดาห์ที่ 2-4</h3>
-      <p style="margin:0; color:#4a2cff;">ศึกษาเรื่องการจัดห้องประชุม และลงมือจัดเอง</p>
+    <div class="timeline-item">
+      <span class="dot"></span>
+      <div class="content">
+        <h3>สัปดาห์ที่ 2–4</h3>
+        <p>เรียนรู้และลงมือจัดห้องประชุม</p>
+      </div>
     </div>
 
-    <div style="border-left:3px solid #6a4fff; padding-left:15px; margin-bottom:20px; position:relative;">
-      <span style="position:absolute; left:-8px; top:8px; width:12px; height:12px; background:#6a4fff; border-radius:50%; display:inline-block;"></span>
-      <h3 style="margin:0 0 5px 0; color:#6a4fff;">สัปดาห์ที่ 5-8</h3>
-      <p style="margin:0; color:#4a2cff;">ช่วยเช็คคอมและบริการเครื่องเล่นVr</p>
+    <div class="timeline-item">
+      <span class="dot"></span>
+      <div class="content">
+        <h3>สัปดาห์ที่ 5–8</h3>
+        <p>ตรวจสอบคอมพิวเตอร์ และดูแลเครื่องเล่น VR</p>
+      </div>
     </div>
 
-    <div style="border-left:3px solid #6a4fff; padding-left:15px; margin-bottom:0; position:relative;">
-      <span style="position:absolute; left:-8px; top:8px; width:12px; height:12px; background:#6a4fff; border-radius:50%; display:inline-block;"></span>
-      <h3 style="margin:0 0 5px 0; color:#6a4fff;">สัปดาห์สุดท้าย</h3>
-      <p style="margin:0; color:#4a2cff;">ทำรายงานและนำเสนอผลงาน</p>
+    <div class="timeline-item">
+      <span class="dot"></span>
+      <div class="content">
+        <h3>สัปดาห์สุดท้าย</h3>
+        <p>จัดทำรายงานและนำเสนอผลงานการฝึกงาน</p>
+      </div>
     </div>
-
   </div>
 </section>
 
 
 <!-- CONTACT -->
-<section id="contact" style="
-  padding: 60px 0;
-  text-align: center;
-  background: #b6e8f8;
-">
-  <h2 style="
-    font-size: 28px;
-    color: #333;
-    margin-bottom: 25px;
-  ">
-    ติดต่อฉัน
-  </h2>
+<section id="contact" class="contact-section">
+  <h2>ติดต่อฉัน</h2>
 
-  <div style="
-    font-size: 20px;
-    line-height: 1.8;
-    color: #444;
-  ">
-    📧 อีเมล: <a href="mailto:twz.khajorn@gmail.com" style="color:#007bff; text-decoration:none;">twz.khajorn@gmail.com</a><br>
-    
-    📞 โทร: <span style="color:#333;">063-677-613</span><br>
-    
-    👍 Facebook: 
-    <a href="https://www.facebook.com/share/16iXjwjQNG/" 
-       target="_blank" 
-       style="color:#007bff; text-decoration:none;">
-       Jeerasak
-    </a>
+  <div class="contact-box">
+    <div class="contact-item">
+      <span class="icon">📧</span>
+      <div>
+        <h3>อีเมล</h3>
+        <p>twz.khajorn@gmail.com</p>
+      </div>
+    </div>
+
+    <div class="contact-item">
+      <span class="icon">📞</span>
+      <div>
+        <h3>โทรศัพท์</h3>
+        <p>063-677-613</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<footer style="
-  background: linear-gradient(135deg, #e0f7fa, #80deea);
-  padding: 25px 0;
-  text-align: center;
-  color: #333;
-  font-size: 16px;
-  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-  border-top: 3px solid #00acc1;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-">
-  <p style="margin: 0;">
-    © 2025 · สร้างโดย <strong style="color: #007c91;">นายจีระศักดิ์ รอดสวัสดิ์</strong>
-  </p>
+<footer class="footer">
+  © 2025 · สร้างโดย <strong>นายจีระศักดิ์ รอดสวัสดิ์</strong>
 </footer>
 
 
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox">
-    <span class="close-lightbox" id="close-lightbox">&times;</span>
-    <img src="" alt="project">
-  </div>
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="close-lightbox" id="close-lightbox">&times;</span>
+  <img src="">
+</div>
 
-  <script>
-    // ====== JS ======
-    document.addEventListener('DOMContentLoaded', () => {
-
-      // Smooth scroll nav
-      document.querySelectorAll('nav a').forEach(anchor => {
-        anchor.addEventListener('click', e => {
-          e.preventDefault();
-          document.querySelector(anchor.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-        });
-      });
-
-      // Fade-in sections
-      const sections = document.querySelectorAll('section');
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if(entry.isIntersecting){
-            entry.target.classList.add('visible');
-          }
-        });
-      }, { threshold: 0.2 });
-      sections.forEach(section => observer.observe(section));
-
-      // Project data
-      const projects = [
-        { title: "บริการเล่นVr", img: "788.jpg" },
-        { title: "จัดห้องประชุม", img: "785.jpg" },
-        { title: "เช็คคอมพิวเตอร์", img: "786.jpg" },
-        { title: "ควบคุมเครื่องเสียง", img: "789.jpg" },
-        { title: "รองาน", img: "project5.jpg" },
-        { title: "รองาน", img: "project6.jpg" }
-      ];
-
-      const container = document.getElementById('projects-container');
-      const pagination = document.getElementById('pagination');
-      const itemsPerPage = 3;
-      let currentPage = 1;
-
-      function renderProjects() {
-        container.innerHTML = "";
-        const start = (currentPage-1)*itemsPerPage;
-        const end = start+itemsPerPage;
-        const pageProjects = projects.slice(start,end);
-
-        pageProjects.forEach(p=>{
-          const div = document.createElement('div');
-          div.className = 'project-card';
-          div.innerHTML = `<img src="${p.img}" alt="${p.title}"><h3>${p.title}</h3>`;
-          div.addEventListener('click',()=>openLightbox(p.img));
-          container.appendChild(div);
-        });
-
-        renderPagination();
-      }
-
-      function renderPagination(){
-        const totalPages = Math.ceil(projects.length/itemsPerPage);
-        pagination.innerHTML = "";
-        for(let i=1;i<=totalPages;i++){
-          const btn = document.createElement('button');
-          btn.textContent = i;
-          if(i===currentPage) btn.style.backgroundColor="#d6caff";
-          btn.addEventListener('click', ()=>{ currentPage=i; renderProjects(); });
-          pagination.appendChild(btn);
-        }
-      }
-
-      // Lightbox
-      const lightbox = document.getElementById('lightbox');
-      const closeBtn = document.getElementById('close-lightbox');
-      function openLightbox(src){
-        lightbox.style.display="flex";
-        lightbox.querySelector('img').src=src;
-      }
-      closeBtn.onclick = ()=>{ lightbox.style.display="none"; };
-      lightbox.onclick = e => { if(e.target===lightbox) lightbox.style.display="none"; };
-
-      renderProjects();
-
-    });
-  </script>
+<script src="script.js"></script>
 </body>
 </html>
